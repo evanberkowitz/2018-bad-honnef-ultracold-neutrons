@@ -1,0 +1,79 @@
+%%%
+%%% Match requested formatting
+%%%
+
+\documentclass[a4paper,12pt]{article}                               % A4 with 12 point font
+\usepackage[left=25mm,right=25mm,top=30mm,bottom=25mm]{geometry}    % Margins ...
+\tolerance=5000                                                     % ... which MUST be respected.
+\renewcommand{\familydefault}{\sfdefault}                           % Helvetica
+
+
+%%%
+%%% My 
+%%%
+
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[
+    colorlinks=true,
+    allcolors=black
+]{hyperref}
+
+%%%
+%%%     Draft margin.
+%%%
+
+\usepackage[
+    angle=90,
+    color=black,
+    opacity=1,
+    scale=2,
+    ]{background}
+\SetBgPosition{current page.west}
+\SetBgVshift{-4.5mm}
+\backgroundsetup{contents={\input{git_information}}}
+
+\input{macros} % input rather than include so we don't create macros.aux
+
+%%%%
+%%%%    Document preparation
+%%%%
+
+
+\begin{document}
+
+\title{The Nucleon Axial Coupling from QCD}
+
+\author{\underline{Evan Berkowitz}\\ The CalLat Collaboration}
+\date{\small \it
+    Institut f\"{u}r Kernphysik \& Institute for Advanced Simulation \\ Forschungszentrum J\"{u}lich \\ 52425 J\"{u}lich, Germany
+}
+
+\maketitle
+
+The axial coupling of the nucleon, $g_A=1.2723(23)$, is the strength of its coupling to the weak axial current of the Standard Model.
+It dictates the rate at which neutrons decay into protons, the strength of the attractive long-range force between nucleons, and other features of nuclear physics.
+To disentangle Standard Model effects from new physics, precision tests of the Standard Model in nuclear environments require a quantitative understanding of nuclear physics rooted in QCD.
+
+The nucleon axial coupling has long been considered a critical benchmark for lattice QCD, and yet proved substantially more challenging to calculate than expected.
+I will describe our recent percent-level calculation, $g_A=1.271(13)$, and how our method differs from existing results.
+I will discuss what is required for a calculation that can discriminate between existing experimental results.
+
+
+\vspace{16pt}
+{\large \bf References}
+\vspace{16pt}
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{16pt}
+[1] C.C. Chang \emph{et al.}, ``A per-cent-level determination of the nucleon axial coupling from Quantum Chromodynamics'', \emph{Nature}, 558:91-94, 2018, DOI:\href{https://doi.org/10.1038/s41586-018-0161-8}{10.1038/s41586-018-0161-8}.  \href{https://arxiv.org/abs/1805.12130}{arXiv:1805.12130}.
+
+[2] Berkowitz \emph{et al.}, ``An Accurate Calculation of the Nucleon Axial Charge with Lattice QCD'', 2017.  \href{https://arxiv.org/abs/1704.01114}{arXiv:1704.01114}.
+
+% \cite{2017:ga_nature}
+%
+% \bibliographystyle{unsrt}
+% \bibliography{master}
+
+\end{document}

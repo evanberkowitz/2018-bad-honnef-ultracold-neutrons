@@ -4,7 +4,9 @@ GIT_STATUS=git_information.tex
 
 DRAFT=draft
 MASTER=master
+ABSTRACT=abstract
 SECTIONS = $(shell ls -1 section/ | sed -e 's/^/section\//g')
+WATCH?=draft
 
 ifndef VERBOSE
 	REDIRECT=1>/dev/null 2>/dev/null
@@ -30,6 +32,14 @@ $(DRAFT).pdf: $(SECTIONS) $(MASTER).tex
 	$(TEX) -jobname=$(DRAFT) $(MASTER).tex $(REDIRECT)
 	make tidy
 
+$(ABSTRACT).pdf: $(SECTIONS) $(ABSTRACT).tex
+	@echo $@
+	make $(GIT_STATUS)
+	$(TEX) $(ABSTRACT).tex $(REDIRECT)
+	$(TEX) $(ABSTRACT).tex $(REDIRECT)
+	$(TEX) $(ABSTRACT).tex $(REDIRECT)
+	make tidy
+
 .PHONY: $(GIT_STATUS)
 
 $(GIT_STATUS): 
@@ -42,14 +52,14 @@ git-hooks:
 .PHONY: tidy
 tidy:
 	$(RM) git_information.aux section/*.aux
-	$(RM) {$(MASTER),$(DRAFT)}.{out,log,aux,synctex.gz,bbl,blg,toc,fls,fdb_latexmk}
+	$(RM) {$(MASTER),$(DRAFT),$(ABSTRACT)}.{out,log,aux,synctex.gz,bbl,blg,toc,fls,fdb_latexmk}
 
 .PHONY: clean
 clean: tidy
 	$(RM) $(GIT_STATUS)
-	$(RM) {$(MASTER),$(DRAFT)}Notes.bib
-	$(RM) {$(MASTER),$(DRAFT)}.pdf
+	$(RM) {$(MASTER),$(DRAFT),$(ABSTRACT)}Notes.bib
+	$(RM) {$(MASTER),$(DRAFT),$(ABSTRACT)}.pdf
 
 .PHONY: watch
-watch: $(DRAFT).pdf
-	watchman-make -p '**/*.tex' '*/*.tex' '*.tex' '*.bib' -t $(DRAFT).pdf
+watch: $(WATCH).pdf
+	watchman-make -p '**/*.tex' '*/*.tex' '*.tex' '*.bib' -t $(WATCH).pdf
