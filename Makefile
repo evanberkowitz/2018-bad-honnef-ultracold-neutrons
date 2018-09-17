@@ -34,7 +34,7 @@ $(DRAFT).pdf: $(SECTIONS) $(MASTER).tex
 
 $(ABSTRACT).pdf: $(SECTIONS) $(ABSTRACT).tex
 	@echo $@
-	make $(GIT_STATUS)
+	echo "" > $(GIT_STATUS) $(REDIRECT)
 	$(TEX) $(ABSTRACT).tex $(REDIRECT)
 	$(TEX) $(ABSTRACT).tex $(REDIRECT)
 	$(TEX) $(ABSTRACT).tex $(REDIRECT)
