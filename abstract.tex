@@ -7,9 +7,10 @@
 \tolerance=5000                                                     % ... which MUST be respected.
 \renewcommand{\familydefault}{\sfdefault}                           % Helvetica
 
+\pagenumbering{gobble}                                              % Not requested, but better.
 
 %%%
-%%% My 
+%%% My Packages
 %%%
 
 \usepackage{amsmath,amssymb}
@@ -19,6 +20,7 @@
     colorlinks=true,
     allcolors=black
 ]{hyperref}
+\input{macros} % input rather than include so we don't create macros.aux
 
 %%%
 %%%     Draft margin.
@@ -33,9 +35,6 @@
 \SetBgPosition{current page.west}
 \SetBgVshift{-4.5mm}
 \backgroundsetup{contents={\input{git_information}}}
-
-\input{macros} % input rather than include so we don't create macros.aux
-\pagenumbering{gobble}
 
 %%%%
 %%%%    Document preparation
@@ -63,17 +62,14 @@ I will discuss what is required for a calculation that can discriminate between 
 
 
 \vspace{32pt}
-{\large \bf References}
 
+% Try to match their formatting for the references:
+{\large \bf References}
 \setlength{\parindent}{0cm}
 \setlength{\parskip}{16pt}
+
 [1] C.C. Chang \emph{et al.}, ``A per-cent-level determination of the nucleon axial coupling from Quantum Chromodynamics'', \emph{Nature}, 558:91-94, 2018, DOI:\href{https://doi.org/10.1038/s41586-018-0161-8}{10.1038/s41586-018-0161-8}.  \href{https://arxiv.org/abs/1805.12130}{arXiv:1805.12130}.
 
 [2] Berkowitz \emph{et al.}, ``An Accurate Calculation of the Nucleon Axial Charge with Lattice QCD'', 2017.  \href{https://arxiv.org/abs/1704.01114}{arXiv:1704.01114}.
-
-% \cite{2017:ga_nature}
-%
-% \bibliographystyle{unsrt}
-% \bibliography{master}
 
 \end{document}
