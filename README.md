@@ -1,8 +1,6 @@
-# latex-base
-An example of my preferred use of LaTeX + git.
+# WE-Heraeus Seminar: Particle Physics with Cold and Ultracold Neutrons
 
-For more information, clone and `make`.  `master.pdf` explains what's going on here.
+The [Wilhelm und Else Heraeus-Stiftung][heraeus] arranged [a program in Bad Honnef][indico], and I was invited to speak about lattice QCD determinations of the nucleon axial coupling.
 
-# A base for other documents
-
-Rather than forking this repository, it probably makes sense to use it as a base to import.  You can [import a repo on GitHub](https://github.com/new/import) and give it an independent history without keeping it tied to the original repo forever.
+[indico]:   https://indico.ph.tum.de/event/4020/
+[heraeus]:  https://www.we-heraeus-stiftung.de/veranstaltungen/seminare/2018/particle-physics-with-cold-and-ultra-cold-neutrons/
